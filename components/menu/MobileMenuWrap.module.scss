@@ -1,0 +1,42 @@
+@import "styles/variables";
+
+.menu{
+  &__wrap{
+    position: fixed;
+    max-width: 400px;
+    width: 100%;
+    top: 78px;
+    right: 0;
+    padding: 12px;
+    visibility: hidden;
+    @media (max-width: $sm) {
+      max-width: 100%;
+    }
+    &:global(.active){
+      visibility: visible;
+    }
+  }
+  &__background{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 400px;
+    width: 100%;
+    background: var(--primary-black);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    @media (max-width: $sm) {
+      max-width: 100%;
+    }
+  }
+  &__nav{
+    margin-top: 48px;
+    ul{
+      display: block;
+      li{
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

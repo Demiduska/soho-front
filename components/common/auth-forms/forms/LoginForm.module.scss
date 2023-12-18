@@ -1,0 +1,209 @@
+@import "styles/variables";
+
+.form{
+  &_wrap{
+    padding: 60px;
+    background: var(--primary-black-48);
+    border: 1px solid var(--primary-white-24);
+    backdrop-filter: blur(7.5px);
+    width: 620px;
+    @media (max-width: $xl){
+      padding: 20px;
+    }
+    @media (max-width: $sm) {
+      width: 100%;
+      //width: auto;
+      //width: 380px;
+      //padding: 24px;
+    }
+    @media (max-width: $xs){
+      //width: 100%;
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      display: block;
+      top: 12px;
+      left: 12px;
+      width: calc(100% - 24px);
+      height: calc(100% - 24px);
+      border: 1px solid var(--primary-white-24);
+    }
+    &:after{
+      position: absolute;
+      top: 6px;
+      width: 20px;
+      height: 14px;
+      left: calc(50% - 10px);
+      background: url('../../../../public/images/icons/digits-white.svg') no-repeat;
+      display: block;
+      content: '';
+      opacity: 0.24;
+    }
+    &_popup{
+      background: var(--primary-black);
+    }
+    &_page{
+      &_single{
+        width: 576px;
+      }
+      @media (max-width: $sm) {
+        background: transparent;
+        backdrop-filter: none;
+        border: none;
+        padding: 0;
+      }
+      &:before,&:after{
+        @media (max-width: $sm) {
+          content: none;
+        }
+      }
+    }
+  }
+  &__title{
+    text-align: center;
+    color: var(--dark-white-light);
+    z-index: 11;
+    position: relative;
+    &_success{
+      margin-bottom: 12px;
+    }
+    &_email{
+      text-align: center;
+      margin-bottom: 12px;
+    }
+  }
+  &__icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  &__subtitle{
+    position: relative;
+    z-index: 11;
+  }
+  &__text{
+    text-align: center;
+    margin-bottom: 24px;
+    &_success{
+      margin-bottom: 12px;
+    }
+  }
+  &__label{
+    position: relative;
+    display: block;
+    margin-bottom: 12px;
+    span{
+      margin-top: 12px;
+      display: inline-block;
+    }
+    &_text{
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--primary-white);
+      margin-bottom: 12px;
+    }
+  }
+  &__show{
+    cursor: pointer;
+    position: absolute;
+    top: 44px;
+    right: 24px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    &:global(.active){
+      svg, path {
+        fill: var(--primary-white);
+      }
+    }
+  }
+  &__buttons{
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_edit{
+      justify-content: flex-end;
+    }
+    @media (max-width: $sm) {
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    button{
+      @media (max-width: $sm) {
+        width: 100%;
+        margin-top: 18px;
+      }
+
+    }
+  }
+  &__forgot{
+    z-index: 100;
+    color: var(--primary-blue-main);
+    transition: all .3s linear;
+    &:hover{
+      color: var(--primary-blue-dark);
+    }
+  }
+  &__submit{
+    padding: 20px;
+  }
+  &__button{
+    &_link{
+      transition: all .3s ease;
+      text-align: right;
+      color: var(--primary-white-48);
+      position: relative;
+      z-index: 100;
+      &:hover{
+        color: var(--primary-white);
+      }
+    }
+  }
+  &__payment{
+    display: flex;
+    max-width: 144px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px auto;
+    &_link{
+      position: relative;
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  &__footer{
+    padding: 25px 40px;
+    border-top: 1px solid var(--dark-black-lines);
+    display: flex;
+    justify-content: center;
+    @media (max-width: $sm) {
+      padding: 24px;
+      justify-content: space-between;
+    }
+    &_link{
+      margin-left: 12px;
+      color: var(--primary-blue-main);
+      transition: all .3s linear;
+      &:hover{
+        color: var(--primary-blue-dark);
+      }
+    }
+  }
+  &__bonus{
+    position: absolute;
+    right: 12px;
+    top: 36px;
+    padding: 8px 10px;
+    color: var(--primary-gold);
+    border: 1px solid var(--primary-gold);
+    font-size: 14px;
+    line-height: 145%;
+  }
+}

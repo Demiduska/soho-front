@@ -1,0 +1,36 @@
+@import "styles/variables";
+
+.section{
+  padding-top: 72px;
+  padding-bottom: 96px;
+  @media (max-width: $sm) {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+  &__head{
+    display: flex;
+    justify-content: center;
+    margin-top: 96px;
+  }
+  &__back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  h1{
+    position: relative;
+    z-index: 2;
+  }
+  &__posts{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    @media (max-width: $md) {
+      gap: 12px;
+    }
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

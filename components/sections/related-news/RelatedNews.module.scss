@@ -1,0 +1,24 @@
+@import "styles/variables";
+
+.news{
+  &__wrap{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 24px;
+    margin-bottom: 96px;
+    @media (max-width: $sm) {
+      display: block;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__slider{
+    :global(.slick-arrow){
+      display: none!important;
+    }
+    &_swipe{
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+  }
+}

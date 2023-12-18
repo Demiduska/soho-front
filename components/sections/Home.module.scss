@@ -1,0 +1,34 @@
+@import "styles/variables";
+
+.section{
+  &__content{
+    text-align: center;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    svg{
+      max-width: 624px;
+      @media (max-width: $sm) {
+        width: 350px!important;
+      }
+    }
+
+
+  }
+  &__buttons{
+    display: flex;
+    justify-content: center;
+    a{
+      width: 220px;
+      @media (max-width: $sm) {
+        width: auto;
+      }
+    }
+  }
+}

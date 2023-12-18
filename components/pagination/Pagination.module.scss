@@ -1,0 +1,39 @@
+.pagination{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 11;
+  &__item{
+    margin-right: 6px;
+    font-size: 14px;
+    line-height: 145%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+      fill: var(--primary-white);
+    }
+    &_active{
+      background: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+    }
+    &:hover{
+      border: 1px solid var(--primary-white);
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    &:disabled{
+      color: var(--primary-white-48);
+      svg{
+        fill: var(--primary-white-48);
+      }
+      &:hover{
+        border: 1px solid var(--primary-white-48);
+      }
+
+    }
+
+  }
+}

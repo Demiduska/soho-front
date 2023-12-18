@@ -1,0 +1,62 @@
+@import "styles/variables";
+
+.section{
+  &__wrap{
+    display: flex;
+  }
+  &__content{
+    margin-left: 10%;
+    padding-left: var(--container-side-padding);
+    width: 100%;
+    max-width: 90%;
+    overflow-x: hidden;
+    @media (max-width: $xl) {
+      margin-left: 20px;
+      max-width: calc(100% - 20px);
+    };
+    @media (max-width: $sm) {
+      margin-left: 0;
+      max-width: 100vw;
+      width: 100vw;
+      padding-left: 0;
+      overflow-x: inherit;
+    }
+  }
+  &__button{
+    &_wrap{
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+  }
+}
+.project{
+  margin-right: 24px;
+  @media (max-width: $sm) {
+    margin-right: 0;
+  }
+}
+.news{
+  &__title{
+    display: flex;
+    align-items: center;
+  }
+  &__link{
+    margin-left: 48px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 145%;
+    position: relative;
+    padding-left: 20px;
+    transition: all .3s ease;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    svg{
+      margin-right: 6px;
+    }
+    &:hover{
+      color: var(--primary-gold);
+    }
+  }
+}

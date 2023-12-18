@@ -1,0 +1,65 @@
+@import "styles/variables";
+
+.card{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-column-gap: 62px;
+  padding: 48px 26px 44px 26px;
+  align-items: center;
+  @media (max-width: $md) {
+    padding: 24px 20px;
+    grid-column-gap: 24px;
+  }
+  @media (max-width: $sm) {
+    padding: 30px 0 0 0;
+    grid-column-gap: 0;
+    grid-template-columns: 1fr;
+  }
+  &__title{
+    text-align: center;
+    position: relative;
+    &:after{
+      position: relative;
+      margin: 12px auto;
+      display: block;
+      content: '';
+      width: 54px;
+      height: 12px;
+      background: url('../../public/images/icons/digits.svg');
+      @media (max-width: $sm) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__content{
+    text-align: center;
+  }
+  &__image{
+    &_wrap{
+      position: relative;
+      @media (max-width: $sm) {
+        margin-bottom: 24px;
+      }
+      &:before{
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        content: '';
+        display: block;
+        width: calc(100% - 24px);
+        height: calc(100% - 24px);
+        border: 1px solid var(--primary-gold);
+      }
+      &:after{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        bottom: -3px;
+        display: block;
+        content: '';
+        background: url('../../public/images/icons/digits.svg') no-repeat;
+        left: calc(50% - 12px);
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "styles/variables";
+
+.section{
+  overflow-x: hidden;
+  &__wrap{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 24px;
+    margin-top: 36px;
+    @media (max-width: $xl) {
+      display: block;
+      grid-template-columns: 1fr;
+    }
+    @media (max-width: $sm) {
+      margin-top: 24px;
+    }
+  }
+
+}

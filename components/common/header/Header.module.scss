@@ -1,0 +1,31 @@
+.header{
+  padding: 14px 0;
+  background: var(--primary-black-24);
+  backdrop-filter: blur(7.5px);
+  border-bottom: 1px solid rgba(255,255,255,0.24);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo{
+    display: flex;
+    align-items: center;
+  }
+  &__play{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__hamburger{
+    margin-left: 12px;
+    background: var(--primary-black-24);
+    border: 1px solid var(--primary-white-24);
+    backdrop-filter: blur(7.5px);
+  }
+}

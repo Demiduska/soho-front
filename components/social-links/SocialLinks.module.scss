@@ -1,0 +1,27 @@
+@import "styles/variables";
+
+.list{
+  display: flex;
+  @media (max-width: $sm) {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  &__item{
+    margin-right: 6px;
+    background: transparent;
+    transition: all .3s ease;
+    height: 36px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  &__link{
+    padding: 8px;
+    opacity: 0.5;
+    transition: all .3s ease;
+    display: block;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

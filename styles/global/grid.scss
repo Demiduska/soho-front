@@ -1,0 +1,48 @@
+.container {
+  max-width: calc( var(--container-width) + var(--container-side-padding) * 2 );
+  padding-right: var(--container-side-padding);
+  padding-left: var(--container-side-padding);
+  margin: 0 auto;
+  width: 100%;
+
+  &-fluid {
+    padding-right: var(--container-side-padding);
+    padding-left: var(--container-side-padding);
+    width: 100%;
+  }
+}
+
+.row {
+  &, &-small, &-less {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 calc(var(--column-gap) * (-0.5));
+    width: calc(100% + var(--column-gap));
+  }
+
+  &-small {
+    --column-gap: 15px;
+  }
+  
+  &-less {
+    --column-gap: 10px;
+  }
+  
+  &-extra-less {
+    --column-gap: 5px;
+  }
+
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+
+.col {
+  padding: 0 calc(var(--column-gap) / 2); 
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% - var(--column-gap)); 
+  @include col($array_sizes, '--column-gap');
+}

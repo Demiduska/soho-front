@@ -1,0 +1,21 @@
+@import "styles/variables";
+
+.files{
+  padding: 60px 0;
+  @media (max-width: $xl){
+    padding: 20px;
+  }
+  @media (max-width: $md){
+    padding: 20px 0;
+  }
+  @media (max-width: $sm) {
+    padding: 0;
+  }
+  &__title{
+    margin-bottom: 24px;
+    text-align: center;
+    @media (max-width: $sm) {
+      margin-bottom: 12px;
+    }
+  }
+}

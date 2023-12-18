@@ -1,0 +1,39 @@
+.form{
+  &__input{
+    &_title{
+      border: none;
+      font-size: 54px;
+      margin-bottom: 24px;
+      width: 100%;
+      &_error{
+        color: var(--addidtional-red);
+        &::placeholder{
+          color: var(--addidtional-red);
+        }
+      }
+    }
+  }
+  &__banner{
+    &_label{
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    &_image{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    &_input{
+
+    }
+    &_delete{
+      z-index: 11;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+  &__submit{
+
+  }
+}

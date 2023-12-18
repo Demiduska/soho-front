@@ -1,0 +1,113 @@
+$sizes: (6,12,18,24,30,36,42,48,54,60);
+
+.mb {
+  @include box('margin-bottom', $array_sizes, $sizes);
+}
+
+.mt {
+  @include box('margin-top', $array_sizes, $sizes);
+}
+
+.mr {
+  @include box('margin-right', $array_sizes, $sizes);
+}
+
+.ml {
+  @include box('margin-left', $array_sizes, $sizes);
+}
+
+.pt {
+  @include box('padding-top', $array_sizes, $sizes);
+}
+
+.pb {
+  @include box('padding-bottom', $array_sizes, $sizes);
+}
+
+.align {
+  @include option('align-items', $array_sizes, ('flex-start', 'flex-end', 'center'));
+}
+
+.justify {
+  @include option('justify-content', $array_sizes, ('flex-start', 'flex-end', 'center', 'space-between'));
+}
+
+.d {
+  @include option('display', $array_sizes, ('flex', 'none', 'block', 'grid', 'inline', 'inline-block', 'inline-flex', 'inline-grid'));
+}
+
+.bt {
+  @include option_array(
+    'border-top', 
+    $array_sizes, 
+    (
+      ('black', '1px solid var(--black)'), 
+      ('none', 'none'), 
+      ('grey', '1px solid var(--light-grey-line)'), 
+    )
+  );
+}
+ 
+.bb {
+  @include option_array(
+    'border-bottom', 
+    $array_sizes, 
+    (
+      ('black', '1px solid var(--black)'), 
+      ('none', 'none'), 
+      ('grey', '1px solid var(--light-grey-line)'), 
+    )
+  );
+}
+
+.bg {
+  @include option_array(
+    'background', 
+    $array_sizes, 
+    (
+      ('grey', 'var(--light-grey-bgr)'),
+      ('none', 'none'),
+      ('light-red', 'rgba(231, 61, 38, .1)')
+    )
+  );
+}
+
+.w {
+  @include option_array(
+    'width', 
+    $array_sizes, 
+    (
+      ('full', '100%'),
+      ('half', '50%'),
+      ('quarter', '25%')
+    )
+  );
+}
+
+.fd {
+  @include option(
+    'flex-direction', 
+    $array_sizes, 
+    (
+      'row',
+      'row-reverse',
+      'column',
+      'column-reverse'
+    )
+  );
+}
+
+.fw {
+  @include option(
+    'flex-wrap', 
+    $array_sizes, 
+    (
+      'nowrap',
+      'wrap'
+    )
+  );
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}

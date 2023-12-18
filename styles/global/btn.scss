@@ -1,0 +1,90 @@
+@import "styles/variables";
+
+.btn{
+  font-family: $TTNormsPro;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 125%;
+  background: var(--primary-black-24);
+  border: 1px solid var(--primary-gold);
+  backdrop-filter: blur(7.5px);
+  color: var(--primary-white);
+  padding: 10px 24px;
+  text-transform: uppercase;
+  transition: all .3s linear;
+  position: relative;
+  &:after{
+    position: absolute;
+    bottom: -6px;
+    left: calc(50% - 12px);
+    content: '';
+    width: 18px;
+    height: 12px;
+    background: url('../../public/images/icons/digits.svg');
+  }
+  @media (max-width: $sm) {
+
+  }
+  &:hover{
+    background: var(--primary-gold);
+  }
+  &--disabled{
+    cursor: default;
+    background: var(--dark-black-dark);
+    color: var(--dark-white-dark);
+  }
+  &--gold{
+    background: linear-gradient(180deg, #342A18 0%, #846B41 100%);
+    backdrop-filter: blur(7.5px);
+    padding: 20px 50px;
+    border: 1px solid var(--primary-gold);
+    text-transform: uppercase;
+    transition: all .3s linear;
+    font-family: $TTNormsPro;
+    font-weight: 700;
+    @media (max-width: $sm) {
+      padding: 20px 30px;
+    }
+    &:after{
+      position: absolute;
+      bottom: -6px;
+      left: calc(50% - 12px);
+      content: '';
+      width: 18px;
+      height: 12px;
+      background: url('../../public/images/icons/digits.svg');
+    }
+    &:hover{
+      background: linear-gradient(180deg, #342A18 0%, #A6854B 100%);
+    }
+  }
+  &--transparent{
+    padding: 20px 50px;
+    background: var(--primary-black-24);
+    border: 1px solid var(--primary-white-24);
+    backdrop-filter: blur(7.5px);
+    text-transform: uppercase;
+    transition: all .3s linear;
+    font-family: $TTNormsPro;
+    font-weight: 700;
+    @media (max-width: $sm) {
+      padding: 20px 30px;
+    }
+    &:hover{
+      background: var(--primary-white-12);
+    }
+  }
+  &--icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      margin-right: 12px;
+    }
+  }
+  &--symbols{
+   position: relative;
+    z-index: 10;
+  }
+}

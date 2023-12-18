@@ -1,0 +1,55 @@
+@import "styles/variables";
+
+.footer{
+  padding: 16px 0;
+  &:before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    display: block;
+    width: 352px;
+    height: 1px;
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.24) 100%);
+  }
+  &__fixed{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    @media (max-width: $sm) {
+      position: absolute;
+      bottom: 48px;
+    }
+  }
+  &__wrap{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    @media (max-width: $sm) {
+      grid-template-columns: 1fr;
+    }
+
+  }
+  &__terms{
+    display: flex;
+    color: var(--primary-white-48);
+    justify-content: flex-end;
+    @media (max-width: $sm) {
+      margin-top: 12px;
+      justify-content: center;
+    }
+    li{
+      list-style: disc;
+      margin-left: 28px;
+      transition: all .3s ease;
+      &:first-child{
+        list-style: none;
+        margin-left: 0;
+      }
+      &:hover{
+        color: var(--primary-white);
+      }
+    }
+  }
+}

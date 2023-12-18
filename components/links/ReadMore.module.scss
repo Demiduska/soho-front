@@ -1,0 +1,15 @@
+.link{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 145%;
+  position: relative;
+  transition: all .3s ease;
+  display: flex;
+  align-items: center;
+  &:hover{
+    color: var(--primary-gold);
+  }
+  svg{
+    margin-right: 6px;
+  }
+}

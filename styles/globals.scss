@@ -1,0 +1,804 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "global";
+
+:root {
+  --ck-color-image-caption-background: hsl(0, 0%, 97%);
+  --ck-color-image-caption-text: hsl(0, 0%, 20%);
+  --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
+  --ck-color-mention-text: hsl(341, 100%, 30%);
+  --ck-color-table-caption-background: hsl(0, 0%, 97%);
+  --ck-color-table-caption-text: hsl(0, 0%, 20%);
+  --ck-highlight-marker-blue: hsl(201, 97%, 72%);
+  --ck-highlight-marker-green: hsl(120, 93%, 68%);
+  --ck-highlight-marker-pink: hsl(345, 96%, 73%);
+  --ck-highlight-marker-yellow: hsl(60, 97%, 73%);
+  --ck-highlight-pen-green: hsl(112, 100%, 27%);
+  --ck-highlight-pen-red: hsl(0, 85%, 49%);
+  --ck-image-style-spacing: 1.5em;
+  --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
+  --ck-todo-list-checkmark-size: 16px;
+  --ck-color-widget-editable-focus-background: transparent!important;
+  /* Your default theme */
+  --background: linear-gradient(144.55deg, #EFF2F8 74.48%, #CDDAFF 100%);;
+  --foreground: black;
+  --primary-black: #11161E;
+  --primary-black-24: rgba(17, 22, 30, 0.24);
+  --primary-black-48: rgba(17, 22, 30, 0.48);
+  --primary-black-72: rgba(17, 22, 30, 0.72);
+  --primary-blue-main:#2962FF;
+  --primary-blue-dark: #2253DB;
+  --primary-black-blur95:rgba(18, 23, 34, 0.95);
+  --primary-black-gradient: linear-gradient(180deg, rgba(18, 23, 34, 0) 50%, #121722 100%);
+  --primary-white: #FFFFFF;
+  --primary-white-linear-2: linear-gradient(rgba(255, 255, 255, 0) 0%, #FFFFFF  100%);
+  --primary-white-48: rgba(255, 255, 255, 0.48);
+  --primary-white-24:  rgba(255, 255, 255, 0.24);
+  --primary-white-12:  rgba(255, 255, 255, 0.12);
+  --addidtional-red: #F6514C;
+  --addidtional-green: #36AF7D;
+  --addidtional-orange: #FBB630;
+  --additional-bronze: #E29E5B;
+  --additional-silver: #82858F;
+  --primary-gold: #D8AE60;
+  --primary-gradient: linear-gradient(90deg, #C624FF 0%, #780EFF 32.29%, #4F32FF 67.19%, #2962FF 100%), #121722;
+
+  --column-gap: 20px;
+
+  --admin-bar-height: 0px;
+
+  --container-side-padding: 20px;
+  --container-width: 1176px;
+
+  --min-width-content: 320px;
+
+  @media (max-width: $xxl) {
+    --container-width: 1300px;
+    --column-gap: 15px;
+  }
+
+  @media (max-width: $xl) {
+    --container-width: 1050px;
+  }
+
+  @media (max-width: $lg ) {
+    --container-width: 900px;
+  }
+
+  @media (max-width: $md ) {
+    --container-width: 790px;
+  }
+  @media (max-width: $sm ) {
+    --container-width: 700px;
+  }
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $TTNormsPro;
+  background: var(--primary-black);
+  color: var(--primary-white);
+  font-size: 14px;
+  line-height: 145%;
+  @media (max-width: $sm) {
+    font-size: 14px;
+  }
+}
+html{
+  font-weight: 400;
+  @media (max-width: $sm) {
+    font-size: 14px;
+  }
+}
+body{
+  color: var(--white);
+  min-width: var(--min-width-content);
+  max-width: 100vw;
+  background: var(--primary-black);
+  transition: background .2s ease-in-out;
+  overflow-x: hidden;
+  &.hidden{
+    overflow-y: hidden;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  //transition: all .3s linear;
+  &:hover{
+    color: var(--dark-white-main);
+  }
+}
+
+button{
+  cursor: pointer;
+  //transition: all 0.3s ease;
+  font-family: $TTNormsPro;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, .img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  &-fluid {
+    width: 100%;
+  }
+}
+ul{
+  list-style: none;
+}
+.section--relative{
+  position: relative;
+  z-index: 11;
+}
+.content{
+  ul{
+    margin-top: 24px;
+    list-style: none;
+    li{
+      position: relative;
+      margin-bottom: 6px;
+      padding-left: 26px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      &:before{
+        position: absolute;
+        display: block;
+        content: '';
+        background: url('../public/images/icons/li.svg');
+        min-width: 20px;
+        left: 0;
+        height: 20px;
+      }
+    }
+  }
+}
+.change-country__btn,.profile-link{
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  //transition: all .3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover,{
+    background: var(--dark-black-light);
+  }
+}
+.profile-link{
+  &.active{
+    background: var(--dark-black-light);
+  }
+}
+input,select{
+  outline: none;
+  color: var(--dark-white-main);
+  background: transparent;
+  &::-moz-placeholder{
+    color: var(--dark-white-dark);
+  }
+  &:invalid{
+    background: transparent;
+  }
+  &:valid{
+    background: var(--dark-black-main);
+  }
+  &:focus,&:active,&:focus-visible{
+    //border: 1px solid var(--primary-white);
+  }
+  &.input--error{
+    border: 1px solid var(--addidtional-red);
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+.input{
+  width: 100%;
+  background: var(--primary-black-72);
+  border: 1px solid var(--primary-white-24);
+  padding: 20px 24px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 145%;
+  color: var(--primary-white);
+  @media (max-width: $sm) {
+    font-size: 14px;
+  }
+  &::placeholder{
+    color: var(--primary-white-48);
+  }
+  &--error{
+    border: 1px solid var(--addidtional-red);
+  }
+  &:invalid{
+    background: var(--dark-black-dark);
+  }
+  &:focus{
+    border: 1px solid var(--primary-gold);
+  }
+  &:valid{
+    background: var(--primary-black);
+  }
+}
+.select{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: var(--dark-black-dark);
+  border: 1px solid var(--dark-black-lines);
+  border-radius: 10px;
+  padding: 14px 12px;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--dark-white-light);
+  &-wrapper{
+    position: relative;
+    &:after{
+      content: "▼";
+      font-size: 1rem;
+      top: 14px;
+      right: 12px;
+      position: absolute;
+      color: var(--dark-white-light);
+      pointer-events: none;
+      @media (max-width: $sm) {
+        top: 44px;
+      }
+    }
+  }
+}
+.link--blue{
+  color: var(--primary-blue-main);
+  transition: all .3s linear;
+  z-index: 4;
+  &:hover{
+    color: var(--primary-blue-dark);
+  }
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: 700;
+}
+h1,.h1{
+  font-size: 90px;
+  line-height: 100%;
+  color: var(--primary-gold);
+  font-family: $TTNormsPro;
+  text-transform: uppercase;
+  @media (max-width: $md) {
+    font-size: 56px;
+  }
+  @media (max-width: $sm) {
+    font-size: 36px;
+  }
+}
+h2,.h2{
+  font-size: 32px;
+  line-height: 145%;
+  color: var(--primary-white);
+  font-family: $Merriweather;
+  text-transform: uppercase;
+  @media (max-width: $md) {
+    font-size: 28px;
+  }
+  @media (max-width: $sm) {
+    font-size: 20px;
+  }
+}
+h3,.h3{
+  font-size: 32px;
+  font-family: $Merriweather;
+  line-height: 145%;
+  color: var(--primary-white);
+  text-transform: uppercase;
+  @media (max-width: $md) {
+    font-size: 28px;
+  }
+  @media (max-width: $sm) {
+    font-size: 20px;
+  }
+}
+h4,.h4{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: $Merriweather;
+  color: var(--primary-white);
+}
+
+.text{
+  &-blue{
+    color: var(--primary-blue-main);
+  }
+  &-white-main{
+    color: var(--dark-white-main);
+  }
+  &-red{
+    color: var(--addidtional-red);
+  }
+  &-primary-white-48{
+    color: var(--primary-white-48);
+  }
+  &-400{
+    font-weight: 400;
+  }
+  &-700{
+    font-weight: 700;
+  }
+  &-center{
+    text-align: center;
+  }
+  &-right{
+    text-align: right;
+  }
+  &-regular{
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+.subtitle{
+  &--step{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 145%;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+}
+.fp-overflow{
+  @media (max-height: 700px) {
+    max-height: max-content!important;
+    overflow-y: inherit!important;
+  }
+  @media (max-width: $sm) {
+    max-height: max-content!important;
+    overflow-y: inherit!important;
+  }
+}
+/* @ckeditor/ckeditor5-table/theme/tablecolumnresize.css */
+.ck-content .table .ck-table-resized {
+  table-layout: fixed;
+  @media (max-width: $sm) {
+    table-layout: initial;
+  }
+}
+/* @ckeditor/ckeditor5-table/theme/tablecolumnresize.css */
+.ck-content .table table {
+  overflow: hidden;
+  @media (max-width: $sm) {
+    overflow-x: scroll!important;
+    width: 100%!important;
+  }
+}
+/* @ckeditor/ckeditor5-table/theme/tablecolumnresize.css */
+.ck-content .table td,
+.ck-content .table th {
+  position: relative;
+}
+/* @ckeditor/ckeditor5-table/theme/table.css */
+.ck-content .table {
+  margin: 0.9em auto;
+  display: table;
+  @media (max-width: $sm) {
+    overflow-x: scroll!important;
+    width: 100vw!important;
+    display: block;
+  }
+}
+/* @ckeditor/ckeditor5-table/theme/table.css */
+.ck-content .table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px double var(--primary-white-12);
+}
+/* @ckeditor/ckeditor5-table/theme/table.css */
+.ck-content .table table td,
+.ck-content .table table th {
+  min-width: 2em;
+  padding: 14px 24px;
+  border: 1px solid var(--primary-white-12)!important;
+  @media (max-width: $sm) {
+    padding: 5px 10px;
+  }
+}
+/* @ckeditor/ckeditor5-table/theme/table.css */
+.ck-content .table table th {
+  font-weight: bold;
+  background-color:  rgba(255, 255, 255, 0.12)!important;
+}
+/* @ckeditor/ckeditor5-table/theme/table.css */
+.ck-content[dir="rtl"] .table th {
+  text-align: right;
+}
+/* @ckeditor/ckeditor5-table/theme/table.css */
+.ck-content[dir="ltr"] .table th {
+  text-align: left;
+}
+/* @ckeditor/ckeditor5-table/theme/tablecaption.css */
+.ck-content .table > figcaption {
+  display: table-caption;
+  caption-side: top;
+  word-break: break-word;
+  text-align: center;
+  color: var(--ck-color-table-caption-text);
+  background-color: var(--ck-color-table-caption-background);
+  padding: .6em;
+  font-size: .75em;
+  outline-offset: -1px;
+}
+/* @ckeditor/ckeditor5-horizontal-line/theme/horizontalline.css */
+.ck-content hr {
+  margin: 48px 0;
+  height: 1px;
+  background: var(--primary-white-48);
+  border: 0;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ol {
+  list-style-type: decimal;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ol ol {
+  list-style-type: lower-latin;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ol ol ol {
+  list-style-type: lower-roman;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ol ol ol ol {
+  list-style-type: upper-latin;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ol ol ol ol ol {
+  list-style-type: upper-roman;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ul {
+  list-style-type: disc;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ul ul {
+  list-style-type: circle;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ul ul ul {
+  list-style-type: square;
+}
+/* @ckeditor/ckeditor5-list/theme/list.css */
+.ck-content ul ul ul ul {
+  list-style-type: square;
+}
+/* @ckeditor/ckeditor5-media-embed/theme/mediaembed.css */
+.ck-content .media {
+  clear: both;
+  margin: 0.9em 0;
+  display: block;
+  min-width: 15em;
+}
+/* @ckeditor/ckeditor5-image/theme/imagecaption.css */
+.ck-content .image > figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  word-break: break-word;
+  color: var(--ck-color-image-caption-text);
+  background-color: var(--ck-color-image-caption-background);
+  padding: .6em;
+  font-size: .75em;
+  outline-offset: -1px;
+}
+/* @ckeditor/ckeditor5-image/theme/image.css */
+.ck-content .image {
+  display: table;
+  clear: both;
+  text-align: center;
+  margin: 0.9em auto;
+  min-width: 50px;
+}
+/* @ckeditor/ckeditor5-image/theme/image.css */
+.ck-content .image img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  min-width: 100%;
+}
+/* @ckeditor/ckeditor5-image/theme/image.css */
+.ck-content .image-inline {
+  /*
+   * Normally, the .image-inline would have "display: inline-block" and "img { width: 100% }" (to follow the wrapper while resizing).;
+   * Unfortunately, together with "srcset", it gets automatically stretched up to the width of the editing root.
+   * This strange behavior does not happen with inline-flex.
+   */
+  display: inline-flex;
+  max-width: 100%;
+  align-items: flex-start;
+}
+/* @ckeditor/ckeditor5-image/theme/image.css */
+.ck-content .image-inline picture {
+  display: flex;
+}
+/* @ckeditor/ckeditor5-image/theme/image.css */
+.ck-content .image-inline picture,
+.ck-content .image-inline img {
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 100%;
+}
+/* @ckeditor/ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized {
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
+  @media (max-width: $xl) {
+    width: 100%!important;
+  }
+}
+/* @ckeditor/ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized img {
+  width: 100%;
+}
+/* @ckeditor/ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized > figcaption {
+  display: block;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-block-align-left,
+.ck-content .image-style-block-align-right {
+  max-width: calc(100% - var(--ck-image-style-spacing));
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-left,
+.ck-content .image-style-align-right {
+  clear: none;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-side {
+  float: right;
+  margin-left: var(--ck-image-style-spacing);
+  max-width: 50%;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-left {
+  float: left;
+  margin-right: var(--ck-image-style-spacing);
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-right {
+  float: right;
+  margin-left: var(--ck-image-style-spacing);
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-block-align-right {
+  margin-right: 0;
+  margin-left: auto;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-block-align-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content p + .image-style-align-left,
+.ck-content p + .image-style-align-right,
+.ck-content p + .image-style-side {
+  margin-top: 0;
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-inline.image-style-align-left,
+.ck-content .image-inline.image-style-align-right {
+  margin-top: var(--ck-inline-image-style-spacing);
+  margin-bottom: var(--ck-inline-image-style-spacing);
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-inline.image-style-align-left {
+  margin-right: var(--ck-inline-image-style-spacing);
+}
+/* @ckeditor/ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-inline.image-style-align-right {
+  margin-left: var(--ck-inline-image-style-spacing);
+}
+/* @ckeditor/ckeditor5-block-quote/theme/blockquote.css */
+.ck-content blockquote {
+  overflow: hidden;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  border-left: solid 5px hsl(0, 0%, 80%);
+}
+/* @ckeditor/ckeditor5-block-quote/theme/blockquote.css */
+.ck-content[dir="rtl"] blockquote {
+  border-left: 0;
+  border-right: solid 5px hsl(0, 0%, 80%);
+}
+/* @ckeditor/ckeditor5-font/theme/fontsize.css */
+.ck-content .text-tiny {
+  font-size: .7em;
+}
+/* @ckeditor/ckeditor5-font/theme/fontsize.css */
+.ck-content .text-small {
+  font-size: .85em;
+}
+/* @ckeditor/ckeditor5-font/theme/fontsize.css */
+.ck-content .text-big {
+  font-size: 1.4em;
+}
+/* @ckeditor/ckeditor5-font/theme/fontsize.css */
+.ck-content .text-huge {
+  font-size: 1.8em;
+}
+/* @ckeditor/ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-yellow {
+  background-color: var(--ck-highlight-marker-yellow);
+}
+/* @ckeditor/ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-green {
+  background-color: var(--ck-highlight-marker-green);
+}
+/* @ckeditor/ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-pink {
+  background-color: var(--ck-highlight-marker-pink);
+}
+/* @ckeditor/ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-blue {
+  background-color: var(--ck-highlight-marker-blue);
+}
+/* @ckeditor/ckeditor5-highlight/theme/highlight.css */
+.ck-content .pen-red {
+  color: var(--ck-highlight-pen-red);
+  background-color: transparent;
+}
+/* @ckeditor/ckeditor5-highlight/theme/highlight.css */
+.ck-content .pen-green {
+  color: var(--ck-highlight-pen-green);
+  background-color: transparent;
+}
+.ck-widget{
+  .accordion{
+    &-description{
+      max-height: none;
+      overflow: auto;
+    }
+  }
+  .tab{
+    padding: 20px 10px;
+    &-title{
+      border: 5px solid grey!important;
+      border-radius: 5px!important;
+    }
+    &-description {
+      border: 5px solid grey!important;
+      border-radius: 5px!important;
+    }
+  }
+}
+.accordion{
+  &-title{
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 24px 24px 24px 0;
+    border-top: 1px solid var(--primary-white-12);
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:before{
+      position: relative;
+      display: block;
+      content: '';
+      background: url('../public/images/icons/chevron-down.svg') no-repeat;
+      min-width: 14px;
+      left: 0;
+      height: 9px;
+      box-sizing: border-box;
+      margin-right: 6px;
+      transition: all 0.2s ease;
+      transform: rotate(0);
+    }
+    &.open{
+      color: var(--primary-white-48);
+      &:before{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-description{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+  }
+}
+.grecaptcha-badge {
+  bottom: 65px !important;
+  visibility: hidden;
+}
+.fp-watermark{
+  visibility: hidden;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+table{
+  thead{
+    th{
+
+    }
+  }
+  body{
+    td{
+
+    }
+  }
+}
+.tabs{
+  &__nav{
+    display: flex;
+    background: var(--primary-white-12, rgba(255, 255, 255, 0.12));
+    @media (max-width: $sm) {
+      display: block
+    }
+    .tab-title{
+      padding: 14px 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 12px;
+      border: 1px solid var(--primary-white-12);
+      flex: 1 1;
+      cursor: pointer;
+      transition: all .3s ease;
+      text-align: center;
+      &:hover,&.open{
+        color: var(--primary-white-48);
+        border: 1px solid var(--primary-white-48);
+      }
+    }
+  }
+  &__items{
+    padding: 20px;
+    border: 1px solid var(--primary-white-12);
+    .tab-description{
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease;
+      display: none;
+      &.active{
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

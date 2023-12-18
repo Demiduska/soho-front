@@ -1,0 +1,66 @@
+@import "styles/variables";
+
+.sidebar{
+  position: relative;
+  border-right: 1px solid var(--primary-white-12);
+  padding-right: 24px;
+  @media (max-width: $md) {
+    margin-bottom: 24px;
+    padding-right: 0;
+    border-right: none;
+  }
+  &__toc{
+
+  }
+  &__item{
+    &_active{
+
+    }
+  }
+  &__link{
+    display: flex;
+    align-items: center;
+    padding: 12px 0 12px 24px;
+    color: var(--primary-white-48);
+    transition: all .3s ease;
+    cursor: pointer;
+    &_active{
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.24) 100%);
+      color: var(--primary-white);
+    }
+  }
+  &__image{
+    margin-right: 12px;
+  }
+  &__text{
+    font-weight: 700;
+
+    text-transform: uppercase;
+  }
+  &__fixed{
+    top: 70px;
+    position: fixed;
+    max-width: 228px;
+    @media (max-width: $md) {
+      position: relative;
+      max-width: 100%;
+      top: 0;
+    }
+  }
+  &__button{
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.24) 100%);
+    padding: 12px 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    &_open{
+      svg{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

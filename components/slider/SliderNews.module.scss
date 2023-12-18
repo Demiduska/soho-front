@@ -1,0 +1,36 @@
+@import "styles/variables";
+
+.slider{
+  width: 100vw;
+  :global(.slick-prev){
+    top: -21px;
+    left: 400px;
+    @media (max-width: $md) {
+      left: 325px;
+      top: 3px;
+    }
+    &:before{
+      color: var(--primary-gold);
+    }
+  }
+  :global(.slick-next){
+    top: -21px;
+    left: 425px;
+    @media (max-width: $md) {
+      left: 350px;
+      top:3px;
+    }
+    &:before{
+      color: var(--primary-gold);
+   }
+  }
+  :global(.slick-slide){
+    width: 376px;
+    max-width: 376px;
+    margin-right: 24px;
+    @media (max-width: $md) {
+      max-width: 290px;
+      width: 290px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "styles/variables";
+
+.slider{
+  width: 100vw;
+  @media (max-width: $sm) {
+    width: 95vw;
+  }
+  :global(.slick-slide){
+    :global(.card--payment){
+      margin: 0 10px;
+    }
+    width: 34vw;
+    @media (max-width: $sm) {
+      width: 70vw;
+    }
+  }
+  &__swipe{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+}

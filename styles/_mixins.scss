@@ -1,0 +1,152 @@
+/*
+ * ==================================================================================
+ * font
+ * ==================================================================================
+ */
+
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("/fonts/#{$file_name}.eot");
+    src: local($font_name),
+    local($file_name),
+    url('/fonts/#{$file_name}.woff2') format('woff2'),
+    url('/fonts/#{$file_name}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+/*
+ * ==================================================================================
+ * Flex columns
+ * ==================================================================================
+ */
+
+@mixin col($screens, $var) {
+  $colArray: 'auto',1,2,3,4,5,6,7,8,9,10,11,12;
+
+  @each $screen in $screens {
+    $first_child: nth($screen, 1);
+    $second_child: nth($screen, 2);
+
+    @each $columns in $colArray {
+      @if $first_child == 'none' {
+        &-#{$columns} {
+          @if $columns == 'auto' {
+            flex: 1 1;
+          }
+          @else {
+            width: calc(100% / 12 * #{$columns} - var(#{$var}) );
+            max-width: calc(100% / 12 * #{$columns} - var(#{$var}) );
+          }
+        }
+      }
+      @else {
+        &-#{$second_child}-#{$columns} {
+          @media (max-width: #{$first_child}) {
+            @if $columns == 'auto' {
+              width: auto;
+              flex: 1 1;
+            }
+            @else {
+              width: calc(100% / 12 * #{$columns} - var(#{$var}) );
+              max-width: calc(100% / 12 * #{$columns} - var(#{$var}) );
+              flex: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * ==================================================================================
+ * Box
+ * ==================================================================================
+ */
+
+@mixin box($option, $screens, $values) {
+  @each $screen in $screens {
+    $first_child: nth($screen, 1);
+    $second_child: nth($screen, 2);
+
+    @each $value in $values {
+      @if $first_child == 'none' {
+        &-#{$value} {
+          #{$option}: #{$value}px;
+        }
+      }
+      @else {
+        &-#{$second_child}-#{$value} {
+          @media (max-width: #{$first_child}) {
+            #{$option}: #{$value}px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * ==================================================================================
+ * Option
+ * ==================================================================================
+ */
+
+@mixin option($option, $screens, $values) {
+  @each $screen in $screens {
+    $first_child: nth($screen, 1);
+    $second_child: nth($screen, 2);
+
+    @each $value in $values {
+      @if $first_child == 'none' {
+        &-#{$value} {
+          #{$option}: #{$value};
+        }
+      }
+      @else {
+        &-#{$second_child}-#{$value} {
+          @media (max-width: #{$first_child}) {
+            #{$option}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * ==================================================================================
+ * Option array
+ * ==================================================================================
+ */
+
+@mixin option_array($option, $screens, $values) {
+  @each $screen in $screens {
+    $first_child: nth($screen, 1);
+    $second_child: nth($screen, 2);
+
+    @each $value in $values {
+      $value_name: nth($value, 1);
+      $value_option: nth($value, 2);
+
+      @if $first_child == 'none' {
+        &-#{$value_name} {
+          #{$option}: #{$value_option};
+        }
+      }
+      @else {
+        &-#{$second_child}-#{$value_name} {
+          @media (max-width: #{$first_child}) {
+            #{$option}: #{$value_option};
+          }
+        }
+      }
+    }
+  }
+}
+
+

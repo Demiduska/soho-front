@@ -1,0 +1,6 @@
+version: '3'
+services:
+  soho-front-next:
+    image: soho-front-next
+    ports:
+      - "3000:3000"

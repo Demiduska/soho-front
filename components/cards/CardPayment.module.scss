@@ -1,0 +1,177 @@
+@import "styles/variables";
+
+.card{
+  margin-top: 12px;
+  padding: 36px;
+  border: 1px solid var(--primary-white-24);
+  backdrop-filter: blur(7.5px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: margin .3s ease;
+  @media (max-width: $xxl) {
+    padding: 20px;
+  }
+  @media (max-width: $xl) {
+    padding: 45px;
+    margin-top: 0;
+  }
+  @media (max-width: $sm){
+    padding: 36px;
+    position: relative;
+  }
+  &__icon{
+    //background: var(--primary-white);
+    //padding: 6px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px auto;
+    max-width: 144px;
+  }
+  &__image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  &__button{
+    &_wrap{
+      display: flex;
+      justify-content: center;
+      @media (max-width: $sm){
+        position: relative;
+        z-index: 100;
+      }
+      button{
+        @media (max-width: $sm){
+          z-index: 100;
+          display: block;
+        }
+      }
+    }
+  }
+  &__inner{
+    span{
+      &:first-child{
+        &:before{
+          position: absolute;
+          left: 12px;
+          top: 12px;
+          display: block;
+          content: '';
+          height: 1px;
+          width: 88px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+        &:after{
+          position: absolute;
+          left: 12px;
+          top: 12px;
+          display: block;
+          content: '';
+          width: 1px;
+          height: 99px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+      }
+      &:last-child{
+        &:before{
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          display: block;
+          content: '';
+          height: 1px;
+          width: 88px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+        &:after{
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          display: block;
+          content: '';
+          width: 1px;
+          height: 99px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+      }
+    }
+  }
+  &:hover{
+    margin-top: 0;
+    .card{
+      &__inner{
+        span{
+          &:first-child{
+            &:before{
+              height: 1px;
+              width: calc(100% - 24px);
+              background: var(--primary-gold);
+            }
+            &:after{
+              width: 1px;
+              height: calc(100% - 24px);
+              background: var(--primary-gold);
+            }
+          }
+          &:last-child{
+            &:before{
+              height: 1px;
+              width: calc(100% - 24px);
+              background: var(--primary-gold);
+            }
+            &:after{
+              width: 1px;
+              height: calc(100% - 24px);
+              background: var(--primary-gold);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+:global(.slick-current){
+  .card{
+    &__inner{
+      span{
+        &:first-child{
+          &:before{
+            height: 1px;
+            width: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+          &:after{
+            width: 1px;
+            height: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+        }
+        &:last-child{
+          &:before{
+            height: 1px;
+            width: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+          &:after{
+            width: 1px;
+            height: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+        }
+      }
+    }
+  }
+}

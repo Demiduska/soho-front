@@ -1,0 +1,13 @@
+.button{
+  &__symbol{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    &_left{
+      left: 0;
+    }
+    &_right{
+      right: 0;
+    }
+  }
+}

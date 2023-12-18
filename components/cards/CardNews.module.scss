@@ -1,0 +1,130 @@
+.card{
+  background: var(--primary-black-72);
+  backdrop-filter: blur(7.5px);
+  position: relative;
+  margin-top: 24px;
+  transition: all .5s linear;
+  &:after{
+    position: absolute;
+    left: calc(50% - 12px);
+    bottom: 6px;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 12px;
+    background: url('../../public/images/icons/digits.svg');
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: all .5s linear;
+  }
+  &__inner{
+    span{
+      &:first-child{
+        &:before{
+          position: absolute;
+          left: 12px;
+          top: 12px;
+          display: block;
+          content: '';
+          height: 1px;
+          width: 88px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+        &:after{
+          position: absolute;
+          left: 12px;
+          top: 12px;
+          display: block;
+          content: '';
+          width: 1px;
+          height: 99px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+      }
+      &:last-child{
+        &:before{
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          display: block;
+          content: '';
+          height: 1px;
+          width: 88px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+        &:after{
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          display: block;
+          content: '';
+          width: 1px;
+          height: 99px;
+          background: var(--primary-white-24);
+          transition: all 1s linear;
+        }
+      }
+    }
+  }
+  &__image{
+
+  }
+  &__content{
+    padding: 26px 30px 36px 30px;
+  }
+  &__title{
+    margin-top: 6px;
+    margin-bottom: 12px;
+    transition: all .3s ease;
+    display: block;
+  }
+  &__excerpt{
+    color: var(--primary-white-48);
+    margin-bottom: 12px;
+  }
+}
+:global(.slick-current){
+  .card{
+    margin-top: 12px;
+    &__title{
+      color: var(--primary-gold);
+    }
+    &__more{
+      color: var(--primary-gold);
+    }
+    &:after{
+      opacity: 1;
+    }
+    &__inner{
+      span{
+        &:first-child{
+          &:before{
+            height: 1px;
+            width: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+          &:after{
+            width: 1px;
+            height: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+        }
+        &:last-child{
+          &:before{
+            height: 1px;
+            width: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+          &:after{
+            width: 1px;
+            height: calc(100% - 24px);
+            background: var(--primary-gold);
+          }
+        }
+      }
+    }
+  }
+}

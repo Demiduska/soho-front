@@ -1,0 +1,62 @@
+/*
+ * ==================================================================================
+ * SCSS
+ * ==================================================================================
+ */
+
+$TTNormsPro: "TTNormsPro", serif;
+$Merriweather: "Merriweather", serif;
+
+//$grey: #848484;
+//$grey_light:#F6F6F6;
+//$grey_line: #373640;
+//$black: #15141A;
+//$black_2: #1C1B22;
+//$white: #fff;
+//$green: #4BB14B;
+//$blue: #2E2E82;
+//$blue_2: #4F4FAD;
+//$orange: #FF6600;
+//$Turquoise: #00CCFF;
+//$purple: #A84CF0;
+//$yellow: #FFE03A;
+//$red: #E73D26;
+//$pink: #FF3EA0;
+
+
+/* 
+ * ==================================================================================
+ * Windows size
+ * ==================================================================================
+ */
+
+$extra-less: 340px;
+$less: 360px;
+$xx: 480px;
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$lg: 1024px;
+$xl: 1200px;
+$overxl: 1300px;
+$xxl: 1512px; 
+
+$array_sizes: (
+  ( 'none', 'none' ), 
+  ( $xxl, 'xxl' ),
+  ( $xl, 'xl' ),
+  ( $lg, 'lg' ), 
+  ( $md, 'md' ), 
+  ( $sm, 'sm' ), 
+  ( $xs, 'xs' ), 
+  ( $xx, 'xx' ), 
+  ( $less, 'less' ), 
+);
+
+.admin-bar {
+  --admin-bar-height: 32px;
+  
+  @media (max-width: 782px) {
+    --admin-bar-height: 46px;
+  }
+}

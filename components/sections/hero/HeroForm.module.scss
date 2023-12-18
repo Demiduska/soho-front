@@ -1,0 +1,12 @@
+.hero{
+  min-height: 100vh;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  flex-direction: column;
+  background: var(--primary-black);
+}
